@@ -1,0 +1,25 @@
+Java的反射机制的实现要借助于4个类：class，Constructor，Field，Method;
+
+class－时类对象
+Constructor－类的构造器对象
+Field－类的属性对象
+Method－类的方法对象。
+通过这四个对象我们可以粗略的看到一个类的各个组成部分。
+
+1、得到构造器的方法
+Constructor getConstructor(Class[] params) -- 获得使用特殊的参数类型的公共构造函数， 
+Constructor[] getConstructors() -- 获得类的所有公共构造函数  
+Constructor getDeclaredConstructor(Class[] params) -- 获得使用特定参数类型的构造函数(与接入级别无关) 
+Constructor[] getDeclaredConstructors() -- 获得类的所有构造函数(与接入级别无关) 
+
+2、获得字段信息的方法
+Field getField(String name) -- 获得命名的公共字段 
+Field[] getFields() -- 获得类的所有公共字段  
+Field getDeclaredField(String name) -- 获得类声明的命名的字段  
+Field[] getDeclaredFields() -- 获得类声明的所有字段 
+
+3、获得方法信息的方法
+Method getMethod(String name, Class[] params) -- 使用特定的参数类型，获得命名的公共方法 
+Method[] getMethods() -- 获得类的所有公共方法 
+Method getDeclaredMethod(String name, Class[] params) -- 使用特写的参数类型，获得类声明的命名的方法  
+Method[] getDeclaredMethods() -- 获得类声明的所有方法 
