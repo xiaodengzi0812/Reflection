@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         String clazzName = pro.get("className").toString();
-//        String clazzName = "com.dengzi.reflectiontest.bean.MyTextView";
+        // String clazzName = "com.dengzi.reflectiontest.bean.MyTextView";
 
         /*第一种*/
         Class clazz1 = null;
@@ -46,10 +46,11 @@ public class MainActivity extends AppCompatActivity {
             clazz1 = Class.forName(clazzName);
         } catch (ClassNotFoundException e) {
         }
+
         /*第二种*/
         // Class clazz2 = MyTextView.class;
 
-         /*第三种*/
+        /*第三种*/
         // MyTextView myTextView = new MyTextView();
         // Class clazz3 = myTextView.getClass();
 
@@ -63,10 +64,12 @@ public class MainActivity extends AppCompatActivity {
      * @throws Exception
      */
     public void test1(View view) throws Exception {
+
         // 获取 "public MyTextView(int width)" 这个构造器
         Constructor con = getClazz().getDeclaredConstructor(int.class);
         // 通过 "public MyTextView(int width)" 来创建MyTextView
         MyTextView mtv = (MyTextView) con.newInstance(12);
+
 
         // 获取所有的构造器
         Constructor[] Constructors = getClazz().getDeclaredConstructors();
@@ -79,12 +82,15 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i < types.length; i++) {
                     if (i < types.length - 1) {
                         logTemp = logTemp + types[i].toString() + ",";
+                    } else {
+                        logTemp = logTemp + types[i].toString();
                     }
                 }
             }
             Log.e(TAG, "构造函数： " + logTemp + ")");
             Log.e(TAG, "-------------------------");
         }
+
 
         /* 输出示例：
                 构造函数： com.dengzi.reflectiontest.bean.MyTextView()

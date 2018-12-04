@@ -25,13 +25,13 @@ public class MyTextView extends MyView {
 
     public MyTextView(int width) {
         this.width = width;
-        Log.e(TAG, "MyTextView(int width)");
+        Log.e(TAG, "MyTextView(int width) -> "+ width);
     }
 
     public MyTextView(float height, String title) {
         this.height = height;
         this.title = title;
-        Log.e(TAG, "MyTextView(float height, String title)");
+        Log.e(TAG, "MyTextView(float height, String title) -> height = "+ height +", title = "+ title);
     }
 
     // -------------方法-------------
